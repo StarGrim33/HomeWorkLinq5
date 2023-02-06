@@ -23,7 +23,7 @@ namespace HomeWorkLinq5
         public void FindExpired()
         {
             int todaysYear = DateTime.Now.Year;
-            var expiredStews = _cannedMeatList.Where(_stews => (_stews.ProductionDate + _stews.ExpirationDate) < todaysYear).ToList();
+            var expiredStews = _cannedMeatList.Where(cannedMeat => (cannedMeat.ProductionDate + cannedMeat.ExpirationDate) < todaysYear).ToList();
             Console.WriteLine($"Просроченная тушёнка, по сегодняшнему {todaysYear} году:");
             ShowGoods(expiredStews);
         }
